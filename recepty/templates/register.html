@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registrace</title>
+    </head>
+    <body>
+        <form class="col-sm-6 col-sm-offset-6 post-form text-center" method="POST">
+            <h2>Registrace</h2>
+            {% csrf_token %}
+            <br>
+            {{ form.as_p }}
+            <br>
+                <button type="submit" class="save btn btn-default">Založit účet</button>
+        </form>
+    </body>
+</html>

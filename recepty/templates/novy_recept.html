@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Nový recept</title>
+</head>
+<body>
+    <h2 class="page-title">Nový recept</h2>
+    <form method="POST" class="recipe-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button success">Ulož</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'Recipes/base.html' %}
+
+{% block content %}
+    <div class="post">
+        <h2>{{ recipe.Recipe_Title }}</h2>
+        <div class="date">
+            <b><i>Datum: </i></b>{{ recipe.Recipe_Date }}
+        </div>
+        <div class="author">
+        	<b><i>Přidal/a uživatel/ka: </i></b> {{ recipe.Recipe_Author }}
+        </div>
+        <div class="ingredients">
+        	<b><i>Ingredience:</i></b>
+        	<p>{{ recipe.Recipe_Ingredients|linebreaksbr }}</p>
+        </div>
+        <div class="description">
+        	<b><i>Postup:</i></b>
+        	<p>{{ recipe.Recipe_Description|linebreaksbr }}</p>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

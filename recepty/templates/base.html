@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<!doctype html>
+<html class="no-js" lang="cs">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Zdravé recepty</title>
+      <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+      <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+
+      <link rel="stylesheet" href="{% static 'css/Recipe.css' %}">
+
+      <script>
+        $(document).foundation();
+      </script>
+    </head>
+    <body>
+
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+        	<li class="menu-text"><h3><a href="/">Recepty</a></h3></li>
+	        {% if user.is_authenticated %}
+				<li><a href="/novy">Přidat recept</span></a></li>
+			{% endif %}
+        </ul>
+      </div>
+    </div>
+    <!-- End Top Bar -->
+
+    <div class="callout large primary">
+      <div class="row column text-center">
+        <h1 style="font-family: Lobster">Zdravé recepty</h1>
+        <p class="subheader" style="font-family: Lobster">Zlepšete si svůj jídelníček rychlými a zdravými recepty.</p>
+      </div>
+    </div>
+
+    <div class="row medium-8 large-7 columns">
+      <div class="blog-post">
+            {% block content %}
+            {% endblock %}
+      </div>
+    </div>
+  </body>
+</html>
