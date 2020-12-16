@@ -23,15 +23,18 @@ def recipe_add(request):
             recipe = form.save(commit=False)
             recipe.Recipe_Author = request.user
             recipe.save()
-            return redirect('recipe_details', recipe_title=recipe.pk)
+            return redirect('/details', recipe_title=recipe.pk)
     else:
         form = RecipeForm()
     return render(request, '../templates/novy_recept.html', {'form': form})
 
+def details(request, pk):
+        recipe = Recipe.objects.get(pk=pk)
+        return render(request, '../templates/details.html', {'recipe': recipe})
 
 def recipe_list(request):
     recipes = Recipe.objects.filter(Recipe_Date__lte=timezone.now()).order_by('Recipe_Date')
-    return render(request, 'recipes/main.html', {'recipes': recipes})
+    return render(request, '../templates/recipe_list.html', {'recipes': recipes})
 
 
 def registrace(request):
