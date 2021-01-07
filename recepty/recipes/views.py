@@ -32,10 +32,34 @@ def details(request, pk):
         recipe = Recipe.objects.get(pk=pk)
         return render(request, '../templates/details.html', {'recipe': recipe})
 
+
 def recipe_list(request):
     recipes = Recipe.objects.filter(Recipe_Date__lte=timezone.now()).order_by('Recipe_Date')
     return render(request, '../templates/recipe_list.html', {'recipes': recipes})
 
+def breakfast_list(request):
+    recipes = Recipe.objects.filter(Recipe_Date__lte=timezone.now()).order_by('Recipe_Date')
+    return render(request, '../templates/breakfast_snacks.html', {'recipes': recipes})
+
+def lunch_list(request):
+    recipes = Recipe.objects.filter(Recipe_Date__lte=timezone.now()).order_by('Recipe_Date')
+    return render(request, '../templates/lunch_dinner.html', {'recipes': recipes})
+
+def sweets_list(request):
+    recipes = Recipe.objects.filter(Recipe_Date__lte=timezone.now()).order_by('Recipe_Date')
+    return render(request, '../templates/healthy_sweets.html', {'recipes': recipes})
+
+def drinks_list(request):
+    recipes = Recipe.objects.filter(Recipe_Date__lte=timezone.now()).order_by('Recipe_Date')
+    return render(request, '../templates/drinks.html', {'recipes': recipes})
+
+def salad_list(request):
+    recipes = Recipe.objects.filter(Recipe_Date__lte=timezone.now()).order_by('Recipe_Date')
+    return render(request, '../templates/salad.html', {'recipes': recipes})
+
+def soup_list(request):
+    recipes = Recipe.objects.filter(Recipe_Date__lte=timezone.now()).order_by('Recipe_Date')
+    return render(request, '../templates/soup.html', {'recipes': recipes})
 
 def registrace(request):
     if request.method == "POST":
@@ -65,3 +89,4 @@ def prihlaseni(request):
     else:
         form = PrihlaseniForm()
     return render(request, '../templates/login.html', {'form': form})
+

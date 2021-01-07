@@ -7,6 +7,16 @@
 <body>
     <h2 class="page-title">Nový recept</h2>
     <form method="POST" class="recipe-form">{% csrf_token %}
+        </select>
+            Kategorie:
+            <select class="form-control" id="" name="kategorie">
+                <option value="1">Snídaně a svačiny</option>
+                <option value="2">Obědy a večeře</option>
+                <option value="3">Zdravé mlsání</option>
+                <option value="4">Polévky</option>
+                <option value="5">Saláty a přílohy</option>
+                <option value="6">Nápoje</option>
+            </select>
         {{ form.as_p }}
         <button type="submit" class="button success">Ulož</button>
     </form>
