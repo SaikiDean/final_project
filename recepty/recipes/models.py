@@ -11,7 +11,6 @@ class Recipe(models.Model):
         (5, 'Saláty a přílohy'),
         (6, 'Nápoje')
     )
-
     #Recipe_Id =
     Recipe_Author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     Recipe_Title = models.CharField(max_length=60)
@@ -26,13 +25,3 @@ class Recipe(models.Model):
     def __str__(self):
         return self.Recipe_Title
 
- #class Calc(models.Model):
-    #Height
-    #Weight
-
-#class Category(models.Model):
- #   name = models.CharField(max_length=300)
-  #  image = models.ImageField(upload_to='images')
-
- #   def __str__(self):
-  #      return self.name

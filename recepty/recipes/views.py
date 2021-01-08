@@ -61,6 +61,10 @@ def soup_list(request):
     recipes = Recipe.objects.filter(Recipe_Date__lte=timezone.now()).order_by('Recipe_Date')
     return render(request, '../templates/soup.html', {'recipes': recipes})
 
+#def user(request):
+ #   likes
+  #  return render()
+
 def registrace(request):
     if request.method == "POST":
         form = RegistraceForm(request.POST)
