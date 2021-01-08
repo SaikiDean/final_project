@@ -13,6 +13,7 @@ kde mají a případně si bude moct uživatel připnout recept do oblíbených
 - Templates = šablony jsou napsány v HTML
 
 ## Cíle
+(jestliže se vyskytuje u některého z cílů křížek, stále se na daném cíli pracuje)
 - data (recepty) se ukládají do databáze ✔
 - třídění receptů dle kategorie ✔
 - funkční login a registrace ✔
