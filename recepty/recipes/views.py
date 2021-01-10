@@ -61,7 +61,7 @@ def soup_list(request):
     recipes = Recipe.objects.filter(Recipe_Date__lte=timezone.now()).order_by('Recipe_Date')
     return render(request, '../templates/soup.html', {'recipes': recipes})
 
-#def user(request):
+#def profile(request):
  #   likes
   #  return render()
 

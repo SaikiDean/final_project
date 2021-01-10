@@ -10,7 +10,7 @@ urlpatterns = [
     path('novy/', views.recipe_add, name="recipe_add"),
     path('details/', views.recipe_list, name="recipe_list"),
     path('recipe/<int:pk>', views.details, name="details"),
-   # path('user/'), views.user, name="user"),
+   # path('profile/'), views.profile, name="profile"),
 #odkazy na kategorie
     path('breakfast/', views.breakfast_list, name="breakfast_list"),
     path('drinks/', views.drinks_list, name="drinks_list"),
