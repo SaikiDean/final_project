@@ -19,3 +19,5 @@ class RegistraceForm(UserCreationForm):
 class PrihlaseniForm(AuthenticationForm):
     class Meta:
         model = User
+
+

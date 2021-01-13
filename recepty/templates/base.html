@@ -53,6 +53,11 @@
         </div>
           <div class="navbar-nav navbar-right row"></div>
           <ul class="navbar-nav">
+               {% if user.is_authenticated %}
+                      <li class="nav-item">
+                            <a class="nav-link" href="/profile">Profil</a>
+                        </li>
+                       {% else %}
               <li class="nav-item">
           <a class="nav-link" href="/login"><button class="btn btn-success">Login</button></a>
               </li>
@@ -60,6 +65,7 @@
           <a class="nav-link nav justify-content-end" href="/register">
               <button class="btn btn-info">Registrace</button></a>
               </li>
+              {% endif %}
           </ul>
           </div>
     </nav>

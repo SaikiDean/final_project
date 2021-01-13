@@ -15,6 +15,8 @@ def user_logout(request):
     logout(request)
     return redirect('/')
 
+def profile(request):
+    return render(request, "../templates/profile.html")
 
 def recipe_add(request):
     if request.method == "POST":
