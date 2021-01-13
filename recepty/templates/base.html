@@ -18,13 +18,16 @@
         $(document).foundation();
       </script>
     </head>
-    <body>
+    <nav>
 
-    <!-- Start Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-        	<li class="menu-text"><h3><a href="/">Recepty</a></h3></li>
+    <!-- Start Nav Bar -->
+     <div class="callout large primary">
+      <nav class="navbar navbar-expand-lg">
+        <div class="navbar-collapse row" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/"><h5>Recepty</h5></a>
+            </li>
 	        {% if user.is_authenticated %}
 				<li><a href="/novy">Přidat recept</span></a></li>
 			{% endif %}
@@ -47,6 +50,7 @@
                 <a class="nav-link" href="/drinks">Nápoje</a>
             </li>
         </ul>
+        </div>
           <div class="navbar-nav navbar-right row"></div>
           <ul class="navbar-nav">
               <li class="nav-item">
@@ -58,12 +62,13 @@
               </li>
           </ul>
           </div>
-      </div>
-    </div>
+    </nav>
     <!-- End Top Bar -->
 
-    <div class="callout large primary">
-      <div class="row column text-center">
+
+      <br>
+
+      <div class="text-center">
         <h1 style="font-family: Lobster">Zdravé recepty</h1>
         <p class="subheader text-center" style="font-family: Lobster">Zlepšete si svůj jídelníček rychlými a zdravými recepty.</p>
       </div>
