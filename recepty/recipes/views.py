@@ -68,13 +68,13 @@ def soup_list(request):
 def registrace(request):
     if request.method == "POST":
         form = RegistraceForm(request.POST)
-        name = request.POST.get('username')
-        passw = request.POST.get('password1')
+        jmeno = request.POST.get('username')
+        heslo = request.POST.get('password1')
         if form.is_valid():
             osoba = form.save()
-            uziv = authenticate(username=name, password=passw)
+            uzivatel = authenticate(username=jmeno, password=heslo)
             osoba.save()
-            login(request, uziv)
+            login(request, uzivatel)
             return redirect('/')
     else:
         form = RegistraceForm()
@@ -84,10 +84,10 @@ def registrace(request):
 def prihlaseni(request):
     if request.method == 'POST':
         form = PrihlaseniForm(request, request.POST)
-        name = request.POST.get('username')
-        passw = request.POST.get('password')
+        jmeno = request.POST.get('username')
+        heslo = request.POST.get('password')
         if form.is_valid:
-            osoba = authenticate(username=name, password=passw)
+            osoba = authenticate(username=jmeno, password=heslo)
             login(request, osoba)
             return redirect('/')
     else:
