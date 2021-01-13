@@ -27,3 +27,7 @@ urlpatterns = [
     url(r'', include('recipes.urls')),
     path('', RedirectView.as_view(url='recipes/')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

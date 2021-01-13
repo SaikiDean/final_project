@@ -17,5 +17,10 @@
         	<b><i>Postup:</i></b>
         	<p>{{ recipe.Recipe_Description|linebreaksbr }}</p>
         </div>
+        <div class="col-sm-4 text-right">
+  <img src="{{ recipe.Recipe_Img.url }}" alt="{{ recipe.Recipe_Img.url }}" height="150px"
+    style="border: 3px solid #F0C000; border-radius: 3px; padding: 2px;
+    background-color: #F8FF95;">
+</div>
     </div>
 {% endblock %}
