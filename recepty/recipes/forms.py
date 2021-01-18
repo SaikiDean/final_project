@@ -20,4 +20,7 @@ class PrihlaseniForm(AuthenticationForm):
     class Meta:
         model = User
 
-
+class AddCatForm(forms.ModelForm):
+    class Meta:
+        model = AddCat
+        fields = ('Cat_Title', 'Cat_Description')

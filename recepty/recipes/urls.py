@@ -11,6 +11,7 @@ urlpatterns = [
     path('details/', views.recipe_list, name="recipe_list"),
     path('recipe/<int:pk>', views.details, name="details"),
     path('profile/', views.profile, name="profile"),
+    path('logout/', views.user_logout, name="logout"),
 #odkazy na kategorie
     path('breakfast/', views.breakfast_list, name="breakfast_list"),
     path('drinks/', views.drinks_list, name="drinks_list"),
@@ -18,4 +19,7 @@ urlpatterns = [
     path('lunch/', views.lunch_list, name="lunch_list"),
     path('salad/', views.salad_list, name="salad_list"),
     path('soup/', views.soup_list, name="soup_list"),
+    path('addcat/', views.add_cat, name="add_cat"),
+    path('catlist/', views.cat_list, name="cat_list"),
+    path('catdetails/', views.cat_details, name="cat_details"),
     ]

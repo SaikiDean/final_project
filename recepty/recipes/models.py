@@ -25,3 +25,6 @@ class Recipe(models.Model):
     def __str__(self):
         return self.Recipe_Title
 
+class AddCat(models.Model):
+    Cat_Title = models.CharField(max_length=60)
+    Cat_Description = models.TextField(blank=True)

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for category in categories %}
+ <div class="post">
+        <a href="{% url 'details' pk=recipe.pk %}"><h1>{{ recipe.Recipe_Title }}</h1> </a>
+ </div>
+    {% endfor %}
+{% endblock %}
