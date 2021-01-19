@@ -25,6 +25,27 @@ class Recipe(models.Model):
     def __str__(self):
         return self.Recipe_Title
 
-class AddCat(models.Model):
-    Cat_Title = models.CharField(max_length=60)
+class Cat(models.Model):
+    Cat_Name = models.CharField(max_length=60, primary_key = True)
     Cat_Description = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.Cat_Name
+
+
+class Prispevek(models.Model):
+    tvurce = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    nazev = models.CharField(max_length=200)
+    text = models.TextField()
+    datum_vytvoreni = models.DateTimeField(
+            default=timezone.now)
+    datum_publikace = models.DateTimeField(
+            blank=True, null=True)
+
+    def publish(self):
+        self.datum_publikace = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.nazev
+

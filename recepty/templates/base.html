@@ -30,6 +30,9 @@
             </li>
 	        {% if user.is_authenticated %}
 				<li><a href="/novy">Přidat recept</span></a></li>
+                    <li class="nav-item">
+                <a class="nav-link" href="/addcat">Přidat novou kategorii</a>
+            </li>
 			{% endif %}
             <li class="nav-item">
                 <a class="nav-link" href="/breakfast">Snídaně a svačiny</a>
@@ -48,9 +51,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/drinks">Nápoje</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/addcat">Přidat novou kategorii</a>
             </li>
             <li>
                 <a class="nav-link" href="/catlist">Seznam přidaných kategorií</a>

@@ -19,7 +19,7 @@ urlpatterns = [
     path('lunch/', views.lunch_list, name="lunch_list"),
     path('salad/', views.salad_list, name="salad_list"),
     path('soup/', views.soup_list, name="soup_list"),
-    path('addcat/', views.add_cat, name="add_cat"),
+    path('addcat/', views.cat, name="add_cat"),
     path('catlist/', views.cat_list, name="cat_list"),
-    path('catdetails/', views.cat_details, name="cat_details"),
+    path('cat_details/', views.cat_details, name="cat_details"),
     ]

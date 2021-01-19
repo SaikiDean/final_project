@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Recipe, AddCat
+from .models import Recipe, Cat
 from .forms import RecipeForm, RegistraceForm, PrihlaseniForm, AddCatForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -18,13 +18,13 @@ def user_logout(request):
 def profile(request):
     return render(request, "../templates/profile.html")
 
-def add_cat(request):
+def cat(request):
     if request.method == "POST":
         form = AddCatForm(request.POST)
         if form.is_valid():
             category = form.save(commit=False)
             category.save()
-            return redirect('/addcat', Cat_Title=category.pk)
+            return redirect('/addcat', Cat_Name=category.pk)
     else:
         form = AddCatForm()
     return render(request, '../templates/addcat.html', {'form': form})
@@ -46,13 +46,13 @@ def details(request, pk):
         recipe = Recipe.objects.get(pk=pk)
         return render(request, '../templates/details.html', {'recipe': recipe})
 
+def cat_list(request, pk):
+    categories = Cat.objects.get(pk=pk)
+    return render(request, '../templates/catlist.html', {'categories': categories})
+
 def cat_details(request):
     recipes = Recipe.objects.filter(Recipe_Date__lte=timezone.now()).order_by('Recipe_Date')
     return render(request, '../templates/cat_details.html', {'recipes': recipes})
-
-def cat_list(request, pk):
-    categories = AddCat.objects.get(pk=pk)
-    return render(request, '../templates/catlist.html', {'categories': categories})
 
 def recipe_list(request):
     recipes = Recipe.objects.filter(Recipe_Date__lte=timezone.now()).order_by('Recipe_Date')
